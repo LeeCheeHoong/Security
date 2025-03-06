@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "cd server && docker-compose up -d && npm install && cd ../app && npm install",
+    "clean": "cd server && docker-compose down -v || true",
+    "start": "concurrently \"cd server && npm run start\" \"cd app && npm run start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
